@@ -1207,7 +1207,7 @@ const themeBtn = document.getElementById('theme-btn');
 const themeIcon = themeBtn.querySelector('ion-icon');
 
 // Check for saved theme preference
-const currentTheme = localStorage.getItem('theme') || 'dark';
+const currentTheme = localStorage.getItem('theme') || 'light';
 if (currentTheme === 'light') {
     document.body.classList.add('light-theme');
     themeIcon.setAttribute('name', 'sunny-outline');
