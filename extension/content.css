@@ -1,0 +1,194 @@
+.presentation-laser-pointer {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2147483647;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px 4px rgba(255, 0, 0, 0.6), 0 0 20px 8px rgba(255, 0, 0, 0.3);
+}
+
+.presentation-drawing-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2147483645;
+}
+
+body.laser-active,
+body.pencil-active {
+  cursor: none !important;
+}
+
+body.laser-active *,
+body.pencil-active * {
+  cursor: none !important;
+}
+
+body.pencil-active {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+body.pencil-active * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+/* Custom pencil cursor */
+.presentation-pencil-cursor {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  pointer-events: none;
+  z-index: 2147483647;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* Floating Toolbar styles */
+.presentation-floating-toolbar {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px;
+  gap: 4px;
+  z-index: 2147483647;
+  font-family: system-ui, -apple-system, sans-serif;
+  user-select: none;
+  opacity: 0.3;
+  transition: opacity 0.3s ease 0.9s, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.presentation-floating-toolbar:hover,
+.presentation-floating-toolbar.dragging {
+  opacity: 1;
+  transition: opacity 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.presentation-floating-toolbar * {
+  box-sizing: border-box;
+}
+
+.presentation-toolbar-drag {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  color: #a1a1aa;
+  border-radius: 50%;
+}
+
+.presentation-toolbar-drag:active {
+  cursor: grabbing;
+}
+
+.presentation-toolbar-drag:hover {
+  background-color: #f4f4f5;
+  color: #52525b;
+}
+
+.presentation-toolbar-divider {
+  width: 24px;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 4px 0;
+}
+
+.presentation-tool-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #52525b;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.presentation-tool-btn:hover {
+  background-color: #f4f4f5;
+  color: #18181b;
+}
+
+.presentation-tool-btn.active {
+  background-color: #eff6ff;
+  color: #3b82f6;
+}
+
+.presentation-tool-btn svg {
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.presentation-color-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  margin: 2px 0;
+  transition: transform 0.1s;
+}
+
+.presentation-color-btn:hover {
+  transform: scale(1.1);
+}
+
+.presentation-color-btn.active {
+  border-color: #18181b;
+}
+
+/* Dark Theme overrides */
+.presentation-floating-toolbar.dark-theme {
+  background-color: #18181b;
+  border-color: #27272a;
+}
+.presentation-floating-toolbar.dark-theme .presentation-toolbar-drag {
+  color: #71717a;
+}
+.presentation-floating-toolbar.dark-theme .presentation-toolbar-drag:hover {
+  background-color: #27272a;
+  color: #a1a1aa;
+}
+.presentation-floating-toolbar.dark-theme .presentation-tool-btn {
+  color: #71717a;
+}
+.presentation-floating-toolbar.dark-theme .presentation-tool-btn:hover {
+  background-color: #27272a;
+  color: #e4e4e7;
+}
+.presentation-floating-toolbar.dark-theme .presentation-tool-btn.active {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+.presentation-floating-toolbar.dark-theme .presentation-toolbar-divider {
+  background-color: #27272a;
+}
+.presentation-floating-toolbar.dark-theme .presentation-color-btn.active {
+  border-color: #e4e4e7;
+}
+
+/* Removed: Side Panel, Gallery, Export styles */

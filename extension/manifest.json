@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Inkflow Canvas",
+  "version": "1.2.0",
+  "description": "A smooth, minimal tools for drawing on the web.",
+  "action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["content.css"],
+      "js": ["rough.js", "templates.js", "content.js"]
+    }
+  ],
+  "permissions": ["activeTab", "scripting"]
+}
